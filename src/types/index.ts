@@ -9,6 +9,8 @@ export interface AxiosRequestConfig {
   params?: any
   // 支持配置headers属性
   headers?: any
+  // 通过设置XMLHttpRequest对象的responseType属性指定响应的数据类型
+  responseType?: XMLHttpRequestResponseType
 }
 
 export type Method = 'get' | 'GET'
@@ -18,3 +20,21 @@ export type Method = 'get' | 'GET'
   | 'post' | 'POST'
   | 'put' | 'PUT'
   | 'patch' | 'PATCH'
+
+export interface AxiosResponse {
+  // 服务端返回的数据
+  data: any
+  // HTTP状态码
+  status: number
+  // 状态消息
+  statusText: string
+  // 响应头
+  headers: any
+  // 请求配置对象
+  config: AxiosRequestConfig
+  // 请求的XMLHttpRequest对象实例
+  request: any
+}
+
+export interface AxiosPromise extends Promise<AxiosResponse> {
+}
