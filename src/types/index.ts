@@ -7,6 +7,8 @@ export interface AxiosRequestConfig {
   data?: any
   // get\head等类型请求的数据，拼接到url的query string中
   params?: any
+  // 支持配置headers属性
+  headers?: any
 }
 
 export type Method = 'get' | 'GET'
